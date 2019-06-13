@@ -222,6 +222,7 @@ public abstract class PlaceholderConfigurerSupport extends PropertyResourceConfi
 			if (!(curName.equals(this.beanName) // 1. 当前实例 PlaceholderConfigurerSupport 不在解析范围内
                     && beanFactoryToProcess.equals(this.beanFactory))) { // 2. 同一个 Spring 容器
 				BeanDefinition bd = beanFactoryToProcess.getBeanDefinition(curName);
+				//捕获异常
 				try {
 					visitor.visitBeanDefinition(bd);
 				} catch (Exception ex) {
