@@ -25,7 +25,7 @@ import org.springframework.util.ResourceUtils;
  * From 《Spring 源码深度解析》：定义资源加载器，主要应用于根据给定的资源文件地址，返回对应的 Resource 。
  *
  * Strategy interface for loading resources (e.. class path or file system
- * resources). An {@link org.springframework.context.ApplicationContext}
+ * resources). An {@link }
  * is required to provide this functionality, plus extended
  * {@link org.springframework.core.io.support.ResourcePatternResolver} support.
  *
@@ -40,8 +40,8 @@ import org.springframework.util.ResourceUtils;
  * @since 10.03.2004
  * @see Resource
  * @see org.springframework.core.io.support.ResourcePatternResolver
- * @see org.springframework.context.ApplicationContext
- * @see org.springframework.context.ResourceLoaderAware
+ * @see
+ * @see
  */
 public interface ResourceLoader {
 

@@ -61,6 +61,9 @@ public class DefaultResourceLoader implements ResourceLoader {
 	private final Map<Class<?>, Map<Resource, ?>> resourceCaches = new ConcurrentHashMap<>(4);
 
 	/**
+	 * 无参构造函数
+	 * 在使用不带参数的构造函数时，
+	 * 使用的 ClassLoader 为默认的 ClassLoader（一般 Thread.currentThread()#getContextClassLoader() ）。
 	 * Create a new DefaultResourceLoader.
 	 * <p>ClassLoader access will happen using the thread context class loader
 	 * at the time of this ResourceLoader's initialization.
@@ -71,6 +74,8 @@ public class DefaultResourceLoader implements ResourceLoader {
 	}
 
 	/**
+	 * 带classLoader参数的构造函数
+	 * 在使用带参数的构造函数时，可以通过 ClassUtils#getDefaultClassLoader()获取。
 	 * Create a new DefaultResourceLoader.
 	 * @param classLoader the ClassLoader to load class path resources with, or {@code null}
 	 * for using the thread context class loader at the time of actual resource access
@@ -81,6 +86,7 @@ public class DefaultResourceLoader implements ResourceLoader {
 
 
 	/**
+	 * 另外，也可以调用 #setClassLoader() 方法进行后续设置。
 	 * Specify the ClassLoader to load class path resources with, or {@code null}
 	 * for using the thread context class loader at the time of actual resource access.
 	 * <p>The default is that ClassLoader access will happen using the thread context
